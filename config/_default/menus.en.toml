@@ -1,0 +1,11 @@
+[[main]]
+  identifier = "docs"
+  name = "Docs"
+  url = "docs"
+  weight = 1
+
+[[main]]
+  identifier = "api"
+  name = "Api"
+  url = "docs/api/latest/"
+  weight = 1

@@ -1,0 +1,5 @@
+[en]
+  title = "Da Planet Security Documentation"
+  languageName = "English"
+  weight = 1
+  contentdir = "content/en"
