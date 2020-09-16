@@ -33,7 +33,7 @@ jobs:
         
       # Runs a set of commands using the runners shell
       - name: publish to ipfs
-        uses: mikeal/npx@latest
+        uses: mikeal/npx@v2.0.0
         env:
           IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.PINATA_KEY }}
           IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.PINATA_SECRET }}
