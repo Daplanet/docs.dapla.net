@@ -1,7 +1,12 @@
-baseURL = "http://localhost/"
+#relativeurls = true
+relativeURLs = true
+#uglyurls = true
+#baseURL = "https://docs.dapla.net/"
+#baseURL = "https://cloudflare-ipfs.com/ipns/"
 languageCode = "en-us"
 title = "Da Planet Security Documentation"
 theme = "zdoc"
+enableRobotsTXT = true
 
 defaultContentLanguage = "en"
 defaultContentlanguageInSubdir = true
@@ -14,6 +19,7 @@ paginate = 1
 rssLimit = 100
 
 googleAnalytics = ""
+
 
 [markup]
   [markup.goldmark]
