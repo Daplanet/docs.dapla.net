@@ -9,19 +9,26 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -33,12 +40,11 @@ jobs:
         
       # Runs a set of commands using the runners shell
       - name: publish to ipfs
-        uses: mikeal/npx@v2.0.0
         env:
           IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.PINATA_KEY }}
           IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.PINATA_SECRET }}
           IPFS_DEPLOY_CLOUDFLARE__API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
           IPFS_DEPLOY_CLOUDFLARE__ZONE: dapla.net
           IPFS_DEPLOY_CLOUDFLARE__RECORD: _dnslink.docs.dapla.net
-        with:
-          args: -- ipfs-deploy -p pinata -d cloudflare $GITHUB_WORKSPACE/public
+          CI: true
+        run: npm install ipfs-deploy && ipfs-deploy -p pinata -d cloudflare $GITHUB_WORKSPACE/public
