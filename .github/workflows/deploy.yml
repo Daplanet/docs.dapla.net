@@ -60,7 +60,6 @@ jobs:
           ALGOLIA_INDEX_FILE: public/algolia.json
           CI: true
         run: npx atomic-algolia
-        id: name: Test site for publicly known js vulnerabilities
 
   security:
     runs-on: ubuntu-latest
