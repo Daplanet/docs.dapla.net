@@ -60,3 +60,12 @@ jobs:
           ALGOLIA_INDEX_FILE: public/algolia.json
           CI: true
         run: npx atomic-algolia
+        id: name: Test site for publicly known js vulnerabilities
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test for public javascript library vulnerabilities 
+        uses: lirantal/is-website-vulnerable@master
+        with:
+          scan-url: "https://docs.dapla.net"
