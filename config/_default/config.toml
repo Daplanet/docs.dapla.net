@@ -38,7 +38,13 @@ googleAnalytics = ""
     startLevel = 2
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "Algolia"]
+
+[outputFormats.Algolia]
+  mediaType = "application/json"
+  baseName = "algolia"
+  isPlainText = true
+  nonAlternative = true
 
 [taxonomies]
   tag = "tags"

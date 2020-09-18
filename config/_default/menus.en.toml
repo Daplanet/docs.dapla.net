@@ -7,5 +7,5 @@
 [[main]]
   identifier = "api"
   name = "Api"
-  url = "docs/api/latest/"
+  url = "api/latest"
   weight = 1
