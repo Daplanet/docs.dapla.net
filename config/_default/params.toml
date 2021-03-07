@@ -1,7 +1,7 @@
 logo = true # Logo that appears in the site navigation bar.
-logoText = "ZDoc" # Logo text that appears in the site navigation bar.
+logoText = "Da Planet Security" # Logo text that appears in the site navigation bar.
 logoType = "short" # long, short
-description = "The ZDoc theme for Hugo example site." # for SEO
+description = "Da Planet Security Documentation and API Schemas" # for SEO
 
 themeOptions = ["light", "dark"] # select options for site color theme
 
